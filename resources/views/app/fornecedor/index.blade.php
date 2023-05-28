@@ -14,15 +14,33 @@ if(empty($variavel)) {} //retornar true se a variavel estiver vazia
 @endphp
 
 @isset($fornecedores)
-      @for ($i = 0 ; isset($fornecedores[$i]) ; $i++)
-        Fornecedor: {{$fornecedores[$i]['nome']}}
+
+      @forelse ($fornecedores as $indice => $fornecedor )
+      
+        Iteração atual: {{$loop->iteration}}
         <br>
-        Status: {{$fornecedores[$i]['status']}}
+        Fornecedor: {{$fornecedor['nome']}}
         <br>
-        CNPJ: {{$fornecedores[$i]['CNPJ']}}
+        Status: {{$fornecedor['status']}}
         <br>
-        Telefone: {{$fornecedores[$i]['ddd'] ?? '' }} {{$fornecedores[$i]['telefone'] ?? '' }}
+        CNPJ: {{$fornecedor['CNPJ']}}
+        <br>
+        Telefone: {{$fornecedor['ddd'] ?? '' }} {{$fornecedor['telefone'] ?? '' }}
+        <br>
+         @if ($loop->first)
+            First interation           
+        @endif
+
+        @if ($loop->last)
+            Last interation
+
+            <br>
+            Total de registros: {{$loop->count}}
+
+        @endif
         <hr>
-      @endfor
+      @empty
+          Não existem fornecdores cadastrados!
+      @endforelse
 @endisset
    
