@@ -20,6 +20,13 @@ class FornecedorController extends Controller
       ]
     ];
 
+    /* 
+        condição ? se verdade : se falso; 
+        condição ? se verdade : (condição ? se verdade : se falso);
+    */
+
+    echo isset($fornecedores[0]['CNPJ']) ? 'CNPJ informado' : 'CNPJ não informado';
+
     return view('app.fornecedor.index', compact('fornecedores'));
   }
 }
