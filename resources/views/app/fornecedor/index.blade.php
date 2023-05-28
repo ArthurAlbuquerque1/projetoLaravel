@@ -14,15 +14,25 @@ if(empty($variavel)) {} //retornar true se a variavel estiver vazia
 @endphp
 
 @isset($fornecedores)
-    Fornecedor: {{$fornecedores[1]['nome']}}
+    Fornecedor: {{$fornecedores[2]['nome']}}
     <br>
-    Status: {{$fornecedores[1]['status']}}
+    Status: {{$fornecedores[2]['status']}}
     <br>
-    CNPJ: {{$fornecedores[1]['CNPJ'] ?? 'Dado não preenchido' }}
-    <!--
-    $variavel testada não estiver definida (isset)
-    ou
-    $variavel testada possuir o valor null
-    -->
+    CNPJ: {{$fornecedores[2]['CNPJ']}}
+    <br>
+    Telefone: {{$fornecedores[2]['ddd'] ?? '' }} {{$fornecedores[2]['telefone'] ?? '' }}
+    @switch($fornecedores[2]['ddd'])
+        @case('11')
+            São Paulo - SP
+            @break
+        @case('31')
+            Belo Horizonte - MG
+            @break
+        @case('83')
+            João Pessoa - PB
+            @break
+        @default
+            Estado não identificado
+    @endswitch
 
 @endisset
