@@ -14,14 +14,15 @@ if(empty($variavel)) {} //retornar true se a variavel estiver vazia
 @endphp
 
 @isset($fornecedores)
-    Fornecedor: {{$fornecedores[0]['nome']}}
+    Fornecedor: {{$fornecedores[1]['nome']}}
     <br>
-    Status: {{$fornecedores[0]['status']}}
+    Status: {{$fornecedores[1]['status']}}
     <br>
-    @isset($fornecedores[0]['CNPJ'])
-    CNPJ: {{$fornecedores[0]['CNPJ']}}
-        @empty($fornecedores[0]['CNPJ'])
-          - vazio
-        @endempty
-    @endisset
+    CNPJ: {{$fornecedores[1]['CNPJ'] ?? 'Dado não preenchido' }}
+    <!--
+    $variavel testada não estiver definida (isset)
+    ou
+    $variavel testada possuir o valor null
+    -->
+
 @endisset
