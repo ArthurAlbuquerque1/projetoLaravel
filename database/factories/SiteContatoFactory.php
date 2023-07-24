@@ -10,10 +10,10 @@ use App\SiteContato;
 
 $factory->define(SiteContato::class, function (Faker $faker) {
   return [
-    'nome' => $faker->name,
-    'telefone' => $faker->tollFreePhoneNumber,
-    'email' => $faker->unique()->email,
-    'motivo_contato' => $faker->numberBetween(1, 3),
-    'mensagem' => $faker->text(200)
+    'nome' => $this->faker->name,
+    'telefone' => $this->faker->tollFreePhoneNumber,
+    'email' => $this->faker->unique()->email,
+    'motivo_contato' => $this->faker->numberBetween(1, 3),
+    'mensagem' => $this->faker->text(200)
   ];
 });

@@ -2,11 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\SiteContato;
 use Illuminate\Database\Seeder;
-
-
-
+use App\SiteContato;
+use Illuminate\Support\Facades\Factory;
 
 class SiteContatoSeeder extends Seeder
 {
@@ -24,6 +22,6 @@ class SiteContatoSeeder extends Seeder
     $contato->mensagem = 'Seja bem-vindo';
     $contato->save();
     */
-    \App\SiteContato::factory()->count(100)->create();
+    \App\SiteContato::factory()->count(100)->create(); 
   }
 }
