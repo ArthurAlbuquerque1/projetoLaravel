@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SiteContato extends Model
 {
-  protected $table = 'Site_Contato';
+  protected $table = 'Site_Contatos';
   protected $fillable = [
     'name',
     'telefone',
